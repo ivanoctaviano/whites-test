@@ -30,7 +30,7 @@ Use this command to check if all services are running well
 
 ## Usage
 
-### PoS Refund Authorization
+- ### PoS Refund Authorization
 
 #### Description
 
@@ -39,7 +39,7 @@ This module customizes PoS to prompt password before proceeding to Refund Proces
 #### Demo
 [Watch the demo video](https://www.loom.com/share/868d5254c4f44f3a886f028cc92894d2)
 
-### Sales Report with SQL Pivot
+- ### Sales Report with SQL Pivot
 
 #### Description
 
@@ -48,7 +48,7 @@ This module generates a SQL-based pivot report that consolidates data from Sales
 #### Demo
 [Watch the demo video](https://www.loom.com/share/8cfbfe25590f4a849077c44922a6200c)
 
-### Mandatory Analytic Account & Partner Validation
+- ### Mandatory Analytic Account & Partner Validation
 
 #### Description
 
