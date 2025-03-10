@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:16
+    container_name: db-service
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - db-data:/var/lib/postgresql/data/pgdata
+
+  odoo:
+    image: odoo:15.0
+    container_name: odoo-service
+    tty: true
+    platform: linux/amd64
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    volumes:
+      - odoo-data:/var/lib/odoo
+      - ./config_odoo:/etc/odoo
+      - ./custom_addons:/mnt/custom_addons
+    command: -d whites -i whites_account,whites_pos,whites_report
+  
+volumes:
+  db-data:
+  odoo-data:

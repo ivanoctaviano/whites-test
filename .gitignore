@@ -1,0 +1,10 @@
+__pycache__
+.vscode/
+.DS_Store
+
+# compiled python files
+*.py[co]
+# emacs backup files
+*~
+*.pyc
+*.pyc*

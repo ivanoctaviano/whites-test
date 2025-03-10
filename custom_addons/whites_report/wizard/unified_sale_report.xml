@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_order_unified_pivot" model="ir.ui.view">
+         <field name="name">unified.sale.report.pivot</field>
+         <field name="model">unified.sale.report</field>
+         <field name="arch" type="xml">
+             <pivot string="Sales Analysis" sample="1">
+                 <field name="product_id" type="row"/>
+                 <field name="date" interval="month" type="col"/>
+                 <field name="product_qty" type="measure"/>
+                 <field name="price_subtotal" type="measure"/>
+             </pivot>
+         </field>
+    </record>
+
+    <record id="view_order_unified_graph" model="ir.ui.view">
+         <field name="name">unified.sale.report.graph</field>
+         <field name="model">unified.sale.report</field>
+         <field name="arch" type="xml">
+             <graph string="Sales Analysis" type="line" sample="1">
+                 <field name="product_id"/>
+                 <field name="date" interval="month"/>
+                 <field name="product_qty" type="measure"/>
+                 <field name="price_subtotal" type="measure"/>
+             </graph>
+         </field>
+    </record>
+
+</odoo>

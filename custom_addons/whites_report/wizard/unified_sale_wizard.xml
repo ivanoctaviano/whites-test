@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_unified_sale_wizard" model="ir.ui.view">
+        <field name="name">view.unified.sale.wizard</field>
+        <field name="model">unified.sale.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Parameters">
+                <group>
+                    <group>
+                        <label for="date_start" string="Date" attrs="{'required': 1}"/>
+                        <div class="o_row">
+                            <field name="date_start" widget="daterange" nolabel="1" class="oe_inline" attrs="{'required': 1}" options="{'related_end_date': 'date_end'}"/>
+                            <i class="fa fa-long-arrow-right mx-2" aria-label="Arrow icon" title="Arrow"/>
+                            <field name="date_end" widget="daterange" nolabel="1" class="oe_inline" attrs="{'required': 1}" options="{'related_start_date': 'date_start'}"/>
+                        </div>
+                    </group>
+                </group>
+                <footer>
+                    <button name="generate_report" string="Generate Report" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_unified_sale_wizard" model="ir.actions.act_window">
+        <field name="name">Unified Sale Report</field>
+        <field name="res_model">unified.sale.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_unified_sale_report_pos" name="Unified Orders Report" action="action_unified_sale_wizard" parent="point_of_sale.menu_point_rep" sequence="5"/>
+    <menuitem id="menu_unified_sale_report_sale" name="Unified Orders Report" action="action_unified_sale_wizard" parent="sale.menu_sale_report" sequence="2"/>
+
+</odoo>
